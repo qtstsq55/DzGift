@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/normal_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.dz.gift.view.SaverUnlockTextView
+        android:gravity="center"
+        android:text="Surprise!"
+        android:id="@+id/titanic_tv"
+        android:textSize="70sp"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/cv_countdownViewTest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="120dp"
+        app:isHideTimeBackground="false"
+        app:isShowDay="true"
+        app:isShowHour="true"
+        app:isShowTimeBgDivisionLine="false"
+        app:isShowMillisecond="false"
+        app:timeBgColor="#66E0F3"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:suffixGravity="center"
+        app:suffixTextColor="#66E0F3"
+        app:suffixTextSize="30sp"
+        app:timeBgDivisionLineSize="1dp"
+        app:timeBgRadius="3dp"
+        app:timeBgSize="50dp"
+        app:timeTextColor="#FFFFFF"
+        app:timeTextSize="30sp" />
+</LinearLayout>

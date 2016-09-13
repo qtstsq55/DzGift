@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.yalantis.starwars.TilesFrameLayout
+    android:fitsSystemWindows="true"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tessellation_frame_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:sw_animationDuration="2000"
+        app:paddingStart="0dp"
+        app:paddingEnd="0dp"
+        app:sw_numberOfTilesX="30"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="centerInside"
+            android:background="@mipmap/rain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_centerInParent="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <TextView
+            android:padding="4dp"
+            android:id="@+id/tv_1"
+            android:textColor="#42BDE8"
+            android:gravity="left"
+            android:typeface="serif"
+            android:text="希望我，是滚烫的手掌;"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:padding="4dp"
+            android:typeface="serif"
+            android:gravity="right"
+            android:id="@+id/tv_2"
+            android:textSize="30sp"
+            android:textColor="#42BDE8"
+            android:text="为你挡，那些来路风雨!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+        android:padding="4dp"
+        android:typeface="serif"
+        android:gravity="center"
+        android:id="@+id/tv_3"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+
+    </RelativeLayout>
+
+    </com.yalantis.starwars.TilesFrameLayout>
+
