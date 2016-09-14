@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.SpannableString;
@@ -12,6 +13,8 @@ import android.text.Spanned;
 import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.TextView;
 
@@ -35,7 +38,7 @@ public class StarActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_star);
-        StatusBarUtil.setColor(this, Color.parseColor("#020202"));
+        setSystemStatusBg(this);
         mTilesFrameLayout  = (TilesFrameLayout) findViewById(R.id.tessellation_frame_layout);
         mTilesFrameLayout.setOnAnimationFinishedListener(new TilesFrameLayoutListener() {
             @Override
@@ -111,6 +114,13 @@ public class StarActivity extends Activity {
     protected void onPause() {
         super.onPause();
         mTilesFrameLayout.onPause();
+    }
+
+    public void setSystemStatusBg(Activity activity) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window win = activity.getWindow();
+            win.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
     }
 
 }

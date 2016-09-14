@@ -12,7 +12,7 @@
         android:name=".App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,12 +20,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/AppThemeNoAction"
             android:name=".StarActivity"
             android:screenOrientation="portrait">
         </activity>
         <service android:name="MusicService" android:enabled="true"></service>
         <activity
             android:name=".MusicActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".FlyActivity"
+            android:theme="@style/AppThemeNoAction"
             android:screenOrientation="portrait">
         </activity>
     </application>

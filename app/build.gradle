@@ -28,4 +28,5 @@ dependencies {
     compile 'com.yalantis:starwarstiles:0.1.1'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.iammert:MaskProgressView:1.0'
+    compile 'com.race604.flyrefresh:library:1.0.1'
 }
