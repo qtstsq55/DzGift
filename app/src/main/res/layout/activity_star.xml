@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/normal_bg"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/con"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <com.dz.gift.view.SaverUnlockTextView
+        android:id="@+id/prize"
+        android:text="请刮奖，机会只有一次"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"/>
+
+    <com.dz.gift.view.ScratchImageView
+        android:id="@+id/srca_im"
+        android:layout_marginTop="8dip"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="150dip"
+        android:layout_height="150dip"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <com.yalantis.starwars.TilesFrameLayout
-    android:fitsSystemWindows="true"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tessellation_frame_layout"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -45,7 +82,7 @@
             android:id="@+id/tv_2"
             android:textSize="30sp"
             android:textColor="#42BDE8"
-            android:text="为你挡，那些来路风雨!"
+            android:text="为你挡，这些来路风雨!"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -65,4 +102,9 @@
     </RelativeLayout>
 
     </com.yalantis.starwars.TilesFrameLayout>
+
+
+
+
+</FrameLayout>
 

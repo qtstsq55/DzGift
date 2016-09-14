@@ -26,5 +26,6 @@ dependencies {
     compile 'com.jaeger.statusbaruitl:library:1.2.4'
     compile 'com.github.iwgang:countdownview:2.1.2'
     compile 'com.yalantis:starwarstiles:0.1.1'
-
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.github.iammert:MaskProgressView:1.0'
 }

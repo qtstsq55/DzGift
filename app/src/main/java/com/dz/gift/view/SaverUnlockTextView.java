@@ -22,6 +22,8 @@ public class SaverUnlockTextView extends TextView implements ValueAnimator.Anima
     private static final int TEXT_NORMAL_COLOR = 0xffffffff;
     private static final int REFRESH_TIME = 2250;
 
+    private int effectColor = TEXT_EFFECT_COLOR;
+
 	private LinearGradient mLinearGradient;
 	private Matrix mGradientMatrix;
 	private int mViewWidth = 0;
@@ -79,7 +81,7 @@ public class SaverUnlockTextView extends TextView implements ValueAnimator.Anima
         if (mViewWidth > 0) {
             Paint paint = getPaint();
             mLinearGradient = new LinearGradient(-mViewWidth, 0, 0, 0,
-                                                  new int[] {TEXT_EFFECT_COLOR , TEXT_NORMAL_COLOR , TEXT_EFFECT_COLOR },
+                                                  new int[] {effectColor , TEXT_NORMAL_COLOR , effectColor },
                                                   new float[] { 0, 0.5f, 1 },
                                                   Shader.TileMode.CLAMP);
             paint.setShader(mLinearGradient);
@@ -94,5 +96,7 @@ public class SaverUnlockTextView extends TextView implements ValueAnimator.Anima
         super.onDraw(canvas);
 	}
 
-
+    public void setEffectColor(int effectColor) {
+        this.effectColor = effectColor;
+    }
 }
