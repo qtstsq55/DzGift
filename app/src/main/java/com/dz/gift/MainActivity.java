@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
         long time2 = convert2long("2015-09-19 14:00:00") - System.currentTimeMillis();
         if(time2 <= 0){
-            gotoStarActivity();
+            gotoFlyActivity();
         }else{
             mCvCountdownViewTest2.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
                 @Override
                 public void onEnd(CountdownView cv) {
-                    gotoStarActivity();
+                    gotoFlyActivity();
                 }
             });
             mCvCountdownViewTest2.start(time2);
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void gotoStarActivity(){
-        startActivity(new Intent(this, StarActivity.class));
+    private void gotoFlyActivity(){
+        startActivity(new Intent(this, FlyActivity.class));
         finish();
     }
 }

@@ -54,7 +54,6 @@ public class MusicActivity extends AppCompatActivity implements ServiceConnectio
                 return true;
             }
         });
-
         Intent music = new Intent(this, MusicService.class);
         startService(music);
 
@@ -75,6 +74,7 @@ public class MusicActivity extends AppCompatActivity implements ServiceConnectio
             mServ.resume();
         }
         cover.start();
+
     }
 
     // indicates whether the activity is linked to service player.
@@ -86,7 +86,9 @@ public class MusicActivity extends AppCompatActivity implements ServiceConnectio
     public void onServiceConnected(ComponentName name, IBinder binder)
     {
         mServ = ((MusicService.ServiceBinder) binder).getService();
+        cover.setmMaxSeconds(mServ.getDuration());
         mServ.start();
+        cover.start();
     }
 
     public void onServiceDisconnected(ComponentName name)

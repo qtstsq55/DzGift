@@ -8,4 +8,11 @@
     <color name="scratch_start_gradient">#e5e5e5</color>
     <color name="scratch_end_gradient">#cccccc</color>
 
+    <color name="btn_normal">#3cbaff</color>
+    <color name="btn_press">#308ec2</color>
+    <color name="btn_disable">#e9ecf1</color>
+    <color name="btn_normal_half">#7F3cbaff</color>
+    <color name="btn_nav_dark_disable">#bdbdbd</color>
+    <color name="primary_light_fc6">#ffffff</color>
+
 </resources>

@@ -101,7 +101,6 @@ public class StarActivity extends Activity {
                 },8000);
             }
         });
-
     }
 
     @Override

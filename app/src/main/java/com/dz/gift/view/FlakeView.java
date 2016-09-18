@@ -137,7 +137,7 @@ public class FlakeView extends View {
         // Reset list of droidflakes, then restart it with 8 flakes
         flakes.clear();
         numFlakes = 0;
-        addFlakes(58);
+        addFlakes(99);
         // Cancel animator in case it was already running
         animator.cancel();
         // Set up fps tracking and start the animation

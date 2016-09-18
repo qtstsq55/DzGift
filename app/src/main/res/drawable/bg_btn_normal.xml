@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 实心 -->
+    <solid android:color="@color/btn_normal" />
+    <!-- 渐变 -->
+<!--     <gradient -->
+<!--         android:angle="270" -->
+<!--         android:endColor="#FFFFFF" -->
+<!--         android:startColor="#ff8c00" /> -->
+    <!-- 描边 -->
+    <!--<stroke-->
+        <!--android:width="@dimen/common_bg_frame_line"-->
+        <!--android:color="@color/common_bg_frame_line" />-->
+    <!-- 圆角 -->
+     <corners
+         android:radius="6dp"/>
+
+    <padding
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp" />
+
+</shape>

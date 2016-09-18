@@ -129,7 +129,7 @@ public class MusicService extends Service implements MediaPlayer.OnErrorListener
 
 	@Override
 	public int getDuration() {
-		return mPlayer.getDuration();
+		return mPlayer.getDuration() / 1000;
 	}
 
 	@Override
