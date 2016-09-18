@@ -29,4 +29,8 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.iammert:MaskProgressView:1.0'
     compile 'com.race604.flyrefresh:library:1.0.1'
+    compile 'com.github.ybq:parallaxviewpager:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+
+    compile 'com.jaredrummler:animated-svg-view:1.0.0'
 }

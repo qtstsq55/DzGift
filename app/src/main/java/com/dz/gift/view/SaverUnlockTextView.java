@@ -98,5 +98,9 @@ public class SaverUnlockTextView extends TextView implements ValueAnimator.Anima
 
     public void setEffectColor(int effectColor) {
         this.effectColor = effectColor;
+        mLinearGradient = new LinearGradient(-mViewWidth, 0, 0, 0,
+                new int[] {effectColor , TEXT_NORMAL_COLOR , effectColor },
+                new float[] { 0, 0.5f, 1 },
+                Shader.TileMode.CLAMP);
     }
 }
