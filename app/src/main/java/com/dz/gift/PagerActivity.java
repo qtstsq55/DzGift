@@ -22,13 +22,16 @@ import com.dz.gift.view.SaverUnlockTextView;
 import com.github.ybq.parallaxviewpager.ParallaxViewPager;
 import com.jrummyapps.android.widget.AnimatedSvgView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PagerActivity extends AppCompatActivity {
 
     private ParallaxViewPager mParallaxViewPager;
     private NaviIndicatorView indicatorView;
 
     private int[] mImages = new int[]{R.mipmap.q1,R.mipmap.q2,R.mipmap.q3,R.mipmap.d1,R.mipmap.d2,R.mipmap.d3,R.mipmap.qd1,R.mipmap.qd2};
-
+    private List<View> mListViews;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,14 @@ public class PagerActivity extends AppCompatActivity {
     }
 
     private void initViewPager() {
+
+        mListViews = new ArrayList<View>();
+        for(int i = 0; i<mImages.length ;i++){
+            View view =  View.inflate(this, R.layout.pager_item, null);
+            mListViews.add(view);
+        }
+        mListViews.add(View.inflate(this, R.layout.item_svg, null));
+
         PagerAdapter adapter = new PagerAdapter() {
 
             @Override
@@ -55,18 +66,16 @@ public class PagerActivity extends AppCompatActivity {
 
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
-                View view = null;
+                View view = mListViews.get(position);
                 if(position < mImages.length) {
-                    view = View.inflate(container.getContext(), R.layout.pager_item, null);
                     ImageView imageView = (ImageView) view.findViewById(R.id.item_img);
                     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                     Glide.with(PagerActivity.this).load(mImages[position % mImages.length]).into(imageView);
                 }else{
-                    view = View.inflate(container.getContext(), R.layout.item_svg, null);
                     AnimatedSvgView animatedSvgView = (AnimatedSvgView) view.findViewById(R.id.animated_svg_view);
                     SaverUnlockTextView textView = (SaverUnlockTextView) view.findViewById(R.id.svg_tv);
                     textView.setEffectColor(getResources().getColor(R.color.normal_bg));
-                    setSvg(animatedSvgView,SVG.LOVE);
+                    setSvg(animatedSvgView,SVG.COUPE);
                 }
                 container.addView(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 return view;
@@ -74,7 +83,7 @@ public class PagerActivity extends AppCompatActivity {
 
             @Override
             public int getCount() {
-                return mImages.length + 1;
+                return mListViews.size();
             }
         };
         mParallaxViewPager.setAdapter(adapter);
@@ -82,7 +91,7 @@ public class PagerActivity extends AppCompatActivity {
 
     private void initAnimationView() {
         indicatorView = (NaviIndicatorView) findViewById(R.id.animation_indicator_view);
-        indicatorView.setCirclesCounts(mImages.length + 1);
+        indicatorView.setCirclesCounts(mListViews.size());
         indicatorView.setCircleRadius(getResources().getDimensionPixelSize(R.dimen.indicator_radius));
         indicatorView.setCircleStoken(getResources().getDimensionPixelSize(R.dimen.indicator_margin));
 
@@ -96,6 +105,24 @@ public class PagerActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                if(position == mImages.length){
+                    View view = mListViews.get(position);
+                    AnimatedSvgView animatedSvgView = (AnimatedSvgView)view.findViewById(R.id.animated_svg_view);
+                    animatedSvgView.setOnStateChangeListener(new AnimatedSvgView.OnStateChangeListener() {
+                        @Override
+                        public void onStateChange(int state) {
+                            if(state == AnimatedSvgView.STATE_FINISHED){
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        gotoFlyActivity();
+                                    }
+                                },1000);
+                            }
+                        }
+                    });
+                    animatedSvgView.start();
+                }
             }
 
             @Override
@@ -119,25 +146,6 @@ public class PagerActivity extends AppCompatActivity {
         svgView.setTraceResidueColor(0x32000000);
         svgView.setTraceColors(svg.colors);
         svgView.rebuildGlyphData();
-        svgView.setOnStateChangeListener(new AnimatedSvgView.OnStateChangeListener() {
-            @Override
-            public void onStateChange(int state) {
-                if(state == AnimatedSvgView.STATE_FINISHED){
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            gotoFlyActivity();
-                        }
-                    },600);
-                }
-            }
-        });
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                svgView.start();
-            }
-        },500);
     }
 
     private void gotoFlyActivity(){
