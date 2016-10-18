@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         StatusBarUtil.setTranslucent(this,0);
 
         CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
-        long time2 = convert2long("2015-09-19 14:00:00") - System.currentTimeMillis();
-        time2 = 5000;
+        long time2 = convert2long("2016-10-19 15:30:00") - System.currentTimeMillis();
+        time2 = Math.max(time2,5000);
         if(time2 <= 0){
             gotoSvgActivity();
         }else{

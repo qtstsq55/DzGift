@@ -87,7 +87,7 @@ public class StarActivity extends Activity {
             @Override
             public void onRevealed(ScratchImageView tv) {
                 tv_prize.setEffectColor(Color.parseColor("#FF3003"));
-                tv_prize.setText("恭喜，您中奖啦！");
+                tv_prize.setText("Happy Birthday!");
                 flakeView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 ((ViewGroup)findViewById(R.id.con)).addView(flakeView);
                 flakeView.resume();
